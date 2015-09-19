@@ -1,0 +1,479 @@
+/**
+ * Basic styling
+ */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 300;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+}
+
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited { color: darken($brand-color, 15%); }
+
+  &:hover {
+      color: $text-color;
+      text-decoration: underline;
+  }
+}
+
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid $grey-color-light;
+  padding-left: $spacing-unit / 2;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-style: italic;
+
+  > :last-child {
+      margin-bottom: 0;
+  }
+}
+
+pre,
+code {
+  font-size: 15px;
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/**
+ * Site header
+ */
+.site-header {
+  position: relative;
+  border-top: 5px solid $grey-color;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  .logo {
+    margin: 0;
+    padding: 0;
+    float: left;
+    text-align: center;
+
+    @include max-screen(600px) {
+      float: none;
+    }
+
+    a {
+      display: inline-block;
+      overflow: hidden;
+      background: url(asset_path("finite_machine_logo.svg")) no-repeat;
+      background-size: contain;
+      width: 250px;
+      height: 176px;
+
+      @include max-screen(600px) {
+        width: 180px;
+        height: 130px
+      }
+    }
+  }
+
+  .actions {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 2em;
+    margin: auto;
+    height: 3em;
+
+    @include max-screen(600px) {
+      position: relative;
+      float: left;
+      height: auto;
+      margin: 0 2em;
+      width: 100%;
+    }
+
+    a {
+      display: inline-block;
+      width: 12em;
+      padding: 1em;
+      @include transition(all 0.15s ease-out);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.9em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #E1541B;
+
+      @include max-screen(700px) {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      &:hover {
+        background: #B12403;
+      }
+    }
+  }
+}
+
+/**
+ * Hero
+ */
+.hero {
+  background-color: #fed484;
+
+  .hero-intro {
+    color: #825601;
+    text-align: center;
+    font-size: 2em;
+    margin: 1em 0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2em;
+  @include clearfix();
+  @include max-screen(600px) { padding: 0 1em; }
+}
+
+.browser-window {
+  width: 80%;
+  @include max-screen(600px) { width: 100%; }
+  border: 1px solid #acacac;
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 3em;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+  &.browser-window--terminal {
+    margin-bottom: -5px;
+    width: 60%;
+
+    @include max-screen(600px) { width: 100%; }
+  }
+
+  .top-bar {
+    height: 30px;
+    border-radius: 4px 4px 0 0;
+    border-top: thin solid #eaeae9;
+    border-bottom: 1px solid #b1aeb1;
+    background-color: #ebebeb;
+    @include linear-gradient(top, #ebebeb, #d5d5d5);
+    user-select: none;
+
+    .circles {
+      margin: 1px 10px;
+      .circle {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: #ffffff;
+
+        &.circle--red {
+          background-color: #ff5c5c;
+          border: 1px solid #e33e41;
+        }
+        &.circle--yellow {
+           margin-left: 4px;
+           background-color: #ffbd4c;
+           border: 1px solid #e09e3e;
+        }
+        &.circle--green {
+          margin-left: 4px;
+          background-color: #00ca56;
+          border: 1px solid #14ae46;
+        }
+      }
+    }
+  }
+
+  .browser-container {
+  }
+
+  .line-numbers {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: auto;
+    background-color: #dfdfdf;
+    @include max-screen(600px) { display: none; }
+
+    ol {
+      margin: 0;
+      padding: 0;
+      margin-top: 7px;
+      margin-bottom: 9px;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      padding-right: 6px;
+      font-size: 0.9em;
+      line-height: 1.6;
+      text-align: right;
+      background-color: #dfdfdf;
+      color: #999;
+      text-shadow: 1px 1px 1px #fff;
+    }
+  }
+
+  .window-content {
+    color: #111;
+    padding-left: 30px;
+    @include max-screen(600px) { padding-left: 0px; }
+    width: 100%;
+
+    pre {
+      border: none;
+      margin: 0;
+      background-color: #fff;
+      padding-left: 30px;
+      @include max-screen(600px) { padding-left: 10px; }
+
+      > code {
+        background-color: #fff;
+      }
+    }
+    .highlight {
+      .ss { color: #b57801; }
+      .no { color: #e1541b; }
+    }
+
+    &.window-content--terminal {
+      padding-left: 0;
+      pre {
+        background-color: #111;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        padding-top: 26px;
+        padding-bottom: 26px;
+
+        > code {
+          background-color: #111;
+          color: #ffffff;
+          .nv { color: #ffffff; }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Features
+ */
+.features {
+  background-color: #ffffff;
+  margin-bottom: $spacing-unit;
+
+  .feature-items {
+    @include clearfix();
+
+    .title {
+      color: #525252;
+      font-size: 2.6em;
+      text-align: center;
+    }
+
+    .feature-item {
+      float: left;
+      width: (100% / 3);
+      min-height: 14em;
+      padding: 1em;
+
+      @include max-screen(600px) {
+        width: 100%;
+        min-height: auto;
+      }
+
+      .feature-icon {
+        position: relative;
+        text-align: center;
+        background-color: #f05f5c;
+        border: 5px solid #b12403;
+        width: 6.4em;
+        height: 6.4em;
+        margin: 0 auto 0.25em;
+        border-radius: 50%;
+
+        svg {
+          margin-top: 9px;
+          width: 4.6em;
+          height: 4.6em;
+          fill: #fff; //#e1541b;
+        }
+      }
+
+      h2 {
+        font-family: $title-font-family;
+        color: #e1541b;
+        font-size: 1.6em;
+        margin: 0;
+        text-align: center;
+        font-weight: 500;
+      }
+      p {
+        color: #525252;
+        font-size: 1.1em;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.installation {
+  background-color: #D3DCB6;
+  overflow: hidden;
+
+  .heading {
+    font-size: 2.6em;
+    text-align: center;
+    color: #6B754B;
+  }
+
+  ol {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    max-width: 30em;
+    text-align: center;
+    margin-bottom: 2.5em;
+
+    p {
+      color: #6B754B;
+      font-size: 1.2em;
+    }
+
+    a {
+      color: #505D23;
+      padding-bottom: 1px;
+      border-bottom: 2px solid #505D23;
+      text-decoration: none;
+    }
+
+    code {
+      border: none;
+      background-color: #d3dcb6;
+      color: #505D23;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  }
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+  background-color: $grey-color-light;
+  color: #525252;
+  padding-top: 3em;
+  padding-bottom: 4em;
+  text-align: center;
+
+  .footer-heading {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: $spacing-unit / 2;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .social-media-list {
+    display: block;
+    list-style: none;
+    margin: 0 auto;
+    width: 20em;
+    border-bottom: 2px solid $grey-color;
+    text-align: center;
+    padding: 0 0 1em 0;
+    @include clearfix();
+
+    li {
+      display: block;
+      margin-bottom: 0.2em;
+      @include clearfix();
+      text-align: center;
+    }
+    .icon {
+      display: block;
+      float: left;
+      width: 32px;
+      height: 32px;
+    }
+    .username {
+      float: left;
+      display: inline-block;
+      height: 32px;
+      margin-left: 8px;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      margin: 0 auto;
+      display: inline-block;
+      color: #525252;
+      font-size: 1.1em;
+    }
+  }
+
+  .copy {
+    text-align: center;
+  }
+}

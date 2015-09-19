@@ -1,0 +1,19 @@
+title: FiniteMachine Ruby gem
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: ""
+highlighter: pygments
+relative_permalinks: false
+twitter_username: piotr_murach
+github_username: peter-murach
+assets:
+  baseurl: ./
+  compress:
+    css: sass
+    js: uglifier
+  cachebust: hard
+  cache: false
+  gzip: [ text/css, application/javascript ]
+exclude: [components, Rakefile, Gemfile, Gemfile.lock]
