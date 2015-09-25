@@ -159,10 +159,10 @@ pre {
  * Hero
  */
 .hero {
-  background-color: #fed484;
+  background-color: #0bd18d;
 
   .hero-intro {
-    color: #825601;
+    color: #ffffff;
     text-align: center;
     font-size: 2em;
     margin: 1em 0;
@@ -369,13 +369,13 @@ pre {
 }
 
 .installation {
-  background-color: #D3DCB6;
+  background-color: #011135;
+  color: #ffffff;
   overflow: hidden;
 
   .heading {
     font-size: 2.6em;
     text-align: center;
-    color: #6B754B;
   }
 
   ol {
@@ -387,23 +387,23 @@ pre {
     margin-bottom: 2.5em;
 
     p {
-      color: #6B754B;
       font-size: 1.2em;
     }
 
     a {
-      color: #505D23;
+      color: #ffffff;
       padding-bottom: 1px;
-      border-bottom: 2px solid #505D23;
+      border-bottom: 2px solid #ffffff;
       text-decoration: none;
     }
 
     code {
       border: none;
-      background-color: #d3dcb6;
-      color: #505D23;
+      background-color: #ff8600;
+      color: #ffffff;
       font-weight: bold;
       font-size: 1.2em;
+      padding: 4px 10px;
     }
   }
 }
