@@ -7,7 +7,7 @@ baseurl: ""
 highlighter: pygments
 relative_permalinks: false
 twitter_username: piotr_murach
-github_username: peter-murach
+github_username: piotrmurach
 assets:
   baseurl: ./
   compress:

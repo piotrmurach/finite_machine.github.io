@@ -9,5 +9,5 @@ task default: :publish
 
 desc 'publish this site'
 task :publish do
-  Rake::Task["site:publish"].invoke('peter-murach/finite_machine')
+  Rake::Task["site:publish"].invoke('piotrmurach/finite_machine')
 end
