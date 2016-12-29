@@ -8,6 +8,9 @@ highlighter: pygments
 relative_permalinks: false
 twitter_username: piotr_murach
 github_username: piotrmurach
+gems:
+  - jekyll-assets
+  - bourbon
 assets:
   baseurl: ./
   compress:
