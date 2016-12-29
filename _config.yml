@@ -12,7 +12,7 @@ gems:
   - jekyll-assets
   - bourbon
 assets:
-  baseurl: ./
+  baseurl: ''
   compress:
     css: sass
     js: uglifier
