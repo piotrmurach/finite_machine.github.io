@@ -166,6 +166,8 @@ pre {
     text-align: center;
     font-size: 2em;
     margin: 1em 0;
+    padding: 0 2em;
+    @include max-screen(600px) { padding: 0; }
   }
 }
 
