@@ -34,9 +34,9 @@ fm = FiniteMachine.new do
   on_exit(:green)   { |event| ... }
 end
 
-fm.state # => :red
+fm.current # => :red
 fm.ready
-fm.state # => :yellow
+fm.current # => :yellow
 {% endhighlight %}
         </div>
       </div>
