@@ -16,25 +16,27 @@ layout: default
       </div>
       <div class="browser-container">
         <div class="line-numbers">
-          <ol><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li></ol>
+          <ol><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li></ol>
         </div>
         <div class="window-content">
 {% highlight ruby %}
-FiniteMachine.define do
+fm = FiniteMachine.new do
   initial :red
 
-  events {
-    event :ready, :red    => :yellow
-    event :go,    :yellow => :green
-    event :stop,  :green  => :red
-  }
+  event :ready, :red    => :yellow
+  event :go,    :yellow => :green
+  event :stop,  :green  => :red
 
-  callbacks {
-    on_before(:ready) { |event| ... }
-    on_after(:go)     { |event| ... }
-    on_before(:stop)  { |event| ... }
-  }
+  on_before(:ready) { |event| ... }
+  on_after(:go)     { |event| ... }
+  on_enter(:yellow) { |event| ... }
+  on_transition     { |event| ... }
+  on_exit(:green)   { |event| ... }
 end
+
+fm.state # => :red
+fm.ready
+fm.state # => :yellow
 {% endhighlight %}
         </div>
       </div>
