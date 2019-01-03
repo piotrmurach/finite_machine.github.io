@@ -7,8 +7,6 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: ""
 highlighter: pygments
 relative_permalinks: false
-twitter_username: piotr_murach
-github_username: piotrmurach
 plugins:
   - jekyll-assets
   - bourbon
@@ -18,6 +16,7 @@ assets:
     css: sass
     js: uglifier
   cachebust: hard
-  cache: false
+  caching:
+    enabled: false
   gzip: [ text/css, application/javascript ]
 exclude: [components, Rakefile, Gemfile, Gemfile.lock]
