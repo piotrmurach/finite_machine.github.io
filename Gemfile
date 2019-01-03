@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'jekyll',        '~> 3.6.2'
-gem 'jekyll-assets', '~> 2.4.0'
+gem 'jekyll',        '~> 3.8.5'
+gem 'jekyll-assets', '~> 3.0.12'
 gem 'pygments.rb',   '~> 1.2.0'
 gem 'sass',          '~> 3.5.2'
 gem 'bourbon',       '~> 3.1.6'
+gem 'font-awesome-sass', '~> 5.6'
 gem 'uglifier',      '~> 3.0.3'
 gem 'static_deploy', '0.2.0'
 gem 'rake'
