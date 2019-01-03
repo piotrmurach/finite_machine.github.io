@@ -100,7 +100,7 @@ pre {
     a {
       display: inline-block;
       overflow: hidden;
-      background: url('..' + asset_path("finite_machine_logo.svg")) no-repeat;
+      background: url(asset_path("finite_machine_logo.svg")) no-repeat;
       background-size: contain;
       width: 250px;
       height: 176px;
