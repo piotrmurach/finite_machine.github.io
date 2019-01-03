@@ -416,11 +416,9 @@ pre {
  */
 .site-footer {
   border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
   background-color: $grey-color-light;
   color: #525252;
   padding-top: 3em;
-  padding-bottom: 4em;
   text-align: center;
 
   .footer-heading {
@@ -444,39 +442,37 @@ pre {
     @include clearfix();
 
     li {
-      display: block;
+      display: inline-block;
       margin-bottom: 0.2em;
       @include clearfix();
       text-align: center;
-    }
-    .icon {
-      display: block;
-      float: left;
-      width: 32px;
-      height: 32px;
-    }
-    .username {
-      float: left;
-      display: inline-block;
-      height: 32px;
-      margin-left: 8px;
-    }
-
-    h3 {
-      font-weight: bold;
-      margin: 0;
-      margin-bottom: 0.5em;
+      padding: 0 1em;
     }
 
     a {
       margin: 0 auto;
       display: inline-block;
       color: #525252;
-      font-size: 1.1em;
+      font-size: 2em;
+      @include transition(color 0.2s ease-in-out);
+
+      &:hover {
+        color: darken(#525252, 20%);
+      }
     }
   }
 
   .copy {
+    margin-top: 2em;
     text-align: center;
+
+    a {
+      color: #525252;
+      text-decoration: underline;
+
+      &:hover {
+        color: darken(#525252, 20%);
+      }
+    }
   }
 }
