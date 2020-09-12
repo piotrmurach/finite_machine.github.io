@@ -78,6 +78,15 @@ pre {
   }
 }
 
+.wrapper {
+  position: relative;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2em;
+  @include max-screen(600px) { padding: 0 1em; }
+}
+
 /**
  * Site header
  */
@@ -87,48 +96,47 @@ pre {
   padding-top: 2em;
   padding-bottom: 2em;
 
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .logo {
+    display: inline-block;
     margin: 0;
     padding: 0;
-    float: left;
     text-align: center;
 
-    @include max-screen(600px) {
-      float: none;
+    @include max-screen(700px) {
+      margin: 0 auto;
     }
 
-    a {
+    .logo-link {
       display: inline-block;
       overflow: hidden;
       background: url(asset_path("finite_machine_logo.svg")) no-repeat;
       background-size: contain;
       width: 250px;
       height: 176px;
-
-      @include max-screen(600px) {
-        width: 180px;
-        height: 130px
-      }
     }
   }
 
   .actions {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 2em;
-    margin: auto;
-    height: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 
-    @include max-screen(600px) {
-      position: relative;
-      float: left;
-      height: auto;
-      margin: 0 2em;
-      width: 100%;
+    @include max-screen(700px) {
+      margin: 1rem auto;
     }
 
-    a {
+    .action {
       display: inline-block;
       width: 12em;
       padding: 1em;
@@ -143,14 +151,19 @@ pre {
       text-decoration: none;
       background: #E1541B;
 
-      @include max-screen(700px) {
+      &:first-child { margin-right: 1rem; }
+
+      @include max-screen(500px) {
+        display: block;
         width: 100%;
-        margin-bottom: 1em;
+
+        &:first-child {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
       }
 
-      &:hover {
-        background: #B12403;
-      }
+      &:hover { background: #B12403; }
     }
   }
 }
@@ -169,16 +182,6 @@ pre {
     padding: 0 2em;
     @include max-screen(600px) { padding: 0; }
   }
-}
-
-.wrapper {
-  position: relative;
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 2em;
-  @include clearfix();
-  @include max-screen(600px) { padding: 0 1em; }
 }
 
 .browser-window {
