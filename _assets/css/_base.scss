@@ -173,6 +173,8 @@ pre {
  */
 .hero {
   background-color: #0bd18d;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 
   .hero-intro {
     color: #ffffff;
@@ -317,7 +319,8 @@ pre {
  */
 .features {
   background-color: #ffffff;
-  margin-bottom: $spacing-unit;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 
   .feature-items {
     @include clearfix();
@@ -421,7 +424,8 @@ pre {
   border-top: 1px solid $grey-color-light;
   background-color: $grey-color-light;
   color: #525252;
-  padding-top: 3em;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
   text-align: center;
 
   .footer-heading {
