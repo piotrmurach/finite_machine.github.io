@@ -431,25 +431,21 @@ pre {
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
   .social-media-list {
-    display: block;
-    list-style: none;
-    margin: 0 auto;
-    width: 20em;
-    border-bottom: 2px solid $grey-color;
-    text-align: center;
-    padding: 0 0 1em 0;
-    @include clearfix();
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 
-    li {
+    .social-link {
       display: inline-block;
       margin-bottom: 0.2em;
-      @include clearfix();
-      text-align: center;
-      padding: 0 1em;
+      padding: 0 1rem;
     }
 
     a {
@@ -466,12 +462,13 @@ pre {
   }
 
   .copy {
-    margin-top: 2em;
+    margin-top: 1em;
     text-align: center;
 
     a {
       color: #525252;
       text-decoration: underline;
+      outline: none;
 
       &:hover {
         color: darken(#525252, 20%);
